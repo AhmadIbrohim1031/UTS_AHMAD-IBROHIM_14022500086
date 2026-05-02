@@ -1,25 +1,92 @@
-# Analisis Sentiment Aplikasi Pemerintah
+# 📊 Analisis Review Aplikasi IKD (Identitas Kependudukan Digital)
 
-Dalam penelitian ini, dilakukan analisis sentimen terhadap ulasan pengguna aplikasi Identitas Kependudukan Digital (IKD) yang tersedia di Google Play Store. Proses pengambilan data dilakukan menggunakan teknik web scraping dengan memanfaatkan Google Play Scraper, sehingga memungkinkan ekstraksi ribuan ulasan pengguna secara otomatis, termasuk informasi seperti rating, tanggal, dan isi komentar.
+Proyek ini bertujuan untuk mengumpulkan dan menganalisis ulasan pengguna dari aplikasi **Identitas Kependudukan Digital (IKD)** yang tersedia di Google Play Store, sebagai bahan evaluasi kualitas layanan digital pemerintah.
 
-Setelah data terkumpul, tahap selanjutnya adalah preprocessing teks. Tahapan ini meliputi pembersihan data seperti:
+---
 
-- Menghapus karakter khusus dan emoji
-- Normalisasi kata tidak baku
-- Tokenisasi
-- Stopword removal
-- Stemming (opsional)
+## 🎯 Tujuan
 
-Tujuannya adalah untuk memastikan kualitas data sebelum masuk ke tahap analisis.
+* Mengumpulkan ulasan pengguna secara otomatis dari Google Play Store
+* Menyusun dataset review dalam format terstruktur
+* Menjadi dasar untuk analisis sentimen dan evaluasi aplikasi
 
-Model yang digunakan dalam penelitian ini adalah Indo-RoBERTa, yaitu model pre-trained language model berbasis Transformer yang telah dilatih khusus menggunakan dataset berbahasa Indonesia. Indo-RoBERTa memiliki keunggulan dalam memahami konteks bahasa Indonesia secara lebih mendalam dibandingkan metode klasik seperti Naive Bayes atau SVM.
+---
 
-Model ini kemudian digunakan untuk melakukan klasifikasi sentimen terhadap setiap ulasan menjadi beberapa kategori, seperti:
-- Sentimen Positif
-- Sentimen Negatif
-- Sentimen Netral
-Hasil dari analisis ini memberikan gambaran mengenai persepsi masyarakat terhadap aplikasi IKD, termasuk:
-- Tingkat kepuasan pengguna
-- Masalah umum yang sering muncul (bug, login error, dll)
-- Fitur yang paling diapresiasi
-Selain itu, hasil analisis juga dapat digunakan sebagai bahan evaluasi bagi pemerintah (Ditjen Dukcapil Kemendagri) untuk meningkatkan kualitas layanan digital, khususnya dalam pengembangan aplikasi IKD di masa mendatang.
+## ⚙️ Cara Kerja Sistem
+
+Sistem berjalan melalui beberapa tahapan utama:
+
+### 1. Pengambilan Data (Scraping)
+
+Sistem mengambil data ulasan langsung dari Google Play Store menggunakan teknik *web scraping*.
+
+Data yang dikumpulkan meliputi:
+
+* Nama pengguna
+* Rating (bintang 1–5)
+* Tanggal ulasan
+* Isi komentar
+
+Pengambilan data difokuskan pada:
+
+* Bahasa Indonesia
+* Pengguna dari wilayah Indonesia
+* Urutan ulasan terbaru
+
+---
+
+### 2. Pengolahan Data Awal
+
+Setelah data berhasil dikumpulkan, data disusun dalam format terstruktur agar mudah diproses lebih lanjut.
+
+Setiap ulasan disimpan sebagai satu baris data dengan atribut yang sudah dipilih (user, rating, tanggal, isi komentar).
+
+---
+
+### 3. Penyimpanan Dataset
+
+Data yang telah dikumpulkan kemudian disimpan ke dalam file berformat **CSV (Comma-Separated Values)**.
+
+Format ini dipilih karena:
+
+* Mudah dibaca oleh manusia
+* Kompatibel dengan Excel, Python, dan tools analisis lainnya
+* Ringan dan sederhana untuk pengolahan data
+
+---
+
+### 4. Output Sistem
+
+Hasil akhir dari proses ini adalah sebuah dataset berisi ulasan pengguna aplikasi IKD yang siap digunakan untuk:
+
+* Analisis sentimen (positif, negatif, netral)
+* Identifikasi masalah umum pada aplikasi
+* Evaluasi kepuasan pengguna
+
+---
+
+## 📈 Potensi Pengembangan
+
+Dataset yang dihasilkan dapat dikembangkan lebih lanjut untuk:
+
+* Analisis sentimen menggunakan model NLP seperti Indo-RoBERTa
+* Visualisasi data (grafik rating, wordcloud, dll)
+* Dashboard monitoring kepuasan pengguna
+* Integrasi ke sistem evaluasi layanan digital pemerintah
+
+---
+
+## 🚀 Manfaat
+
+* Memberikan insight nyata dari pengguna
+* Membantu pengambilan keputusan berbasis data
+* Meningkatkan kualitas aplikasi dan layanan publik
+* Mendukung transformasi digital pemerintah
+
+---
+
+## 📌 Kesimpulan
+
+Dengan memanfaatkan teknik scraping dan pengolahan data sederhana, sistem ini mampu mengubah ulasan pengguna yang tidak terstruktur menjadi dataset yang bernilai untuk analisis lebih lanjut.
+
+Proyek ini menjadi langkah awal dalam membangun sistem evaluasi berbasis data terhadap layanan digital pemerintah.
