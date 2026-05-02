@@ -1,3 +1,25 @@
 # Analisis Sentiment Aplikasi Pemerintah
 
-Menggunakan Google Play Scraper dan Indo-RoBERTa untuk analisis review aplikasi pemerintah.
+Dalam penelitian ini, dilakukan analisis sentimen terhadap ulasan pengguna aplikasi Identitas Kependudukan Digital (IKD) yang tersedia di Google Play Store. Proses pengambilan data dilakukan menggunakan teknik web scraping dengan memanfaatkan Google Play Scraper, sehingga memungkinkan ekstraksi ribuan ulasan pengguna secara otomatis, termasuk informasi seperti rating, tanggal, dan isi komentar.
+
+Setelah data terkumpul, tahap selanjutnya adalah preprocessing teks. Tahapan ini meliputi pembersihan data seperti:
+
+- Menghapus karakter khusus dan emoji
+- Normalisasi kata tidak baku
+- Tokenisasi
+- Stopword removal
+- Stemming (opsional)
+
+Tujuannya adalah untuk memastikan kualitas data sebelum masuk ke tahap analisis.
+
+Model yang digunakan dalam penelitian ini adalah Indo-RoBERTa, yaitu model pre-trained language model berbasis Transformer yang telah dilatih khusus menggunakan dataset berbahasa Indonesia. Indo-RoBERTa memiliki keunggulan dalam memahami konteks bahasa Indonesia secara lebih mendalam dibandingkan metode klasik seperti Naive Bayes atau SVM.
+
+Model ini kemudian digunakan untuk melakukan klasifikasi sentimen terhadap setiap ulasan menjadi beberapa kategori, seperti:
+- Sentimen Positif
+- Sentimen Negatif
+- Sentimen Netral
+Hasil dari analisis ini memberikan gambaran mengenai persepsi masyarakat terhadap aplikasi IKD, termasuk:
+- Tingkat kepuasan pengguna
+- Masalah umum yang sering muncul (bug, login error, dll)
+- Fitur yang paling diapresiasi
+Selain itu, hasil analisis juga dapat digunakan sebagai bahan evaluasi bagi pemerintah (Ditjen Dukcapil Kemendagri) untuk meningkatkan kualitas layanan digital, khususnya dalam pengembangan aplikasi IKD di masa mendatang.
